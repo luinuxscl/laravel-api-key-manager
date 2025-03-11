@@ -13,13 +13,16 @@ class APIKeyManagerServiceProvider extends ServiceProvider
     {
         // Publicar el archivo de configuración
         $this->publishes([
-            __DIR__.'/../../config/api_keys.php' => config_path('api_keys.php'),
+            __DIR__ . '/../../config/api_keys.php' => config_path('api_keys.php'),
         ], 'config');
+
+        // Cargar rutas del API
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
 
         // Publicar migraciones
         if (! class_exists('CreateApiKeysTable')) {
             $this->publishes([
-                __DIR__.'/../../database/migrations/2025_03_10_000000_create_api_keys_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_api_keys_table.php'),
+                __DIR__ . '/../../database/migrations/2025_03_10_000000_create_api_keys_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_api_keys_table.php'),
             ], 'migrations');
         }
 
@@ -37,7 +40,8 @@ class APIKeyManagerServiceProvider extends ServiceProvider
     {
         // Fusiona la configuración del package con la del proyecto
         $this->mergeConfigFrom(
-            __DIR__.'/../../config/api_keys.php', 'api_keys'
+            __DIR__ . '/../../config/api_keys.php',
+            'api_keys'
         );
 
         // Registrar el singleton para el facade
