@@ -5,6 +5,7 @@ namespace Luinuxscl\LaravelApiKeyManager\Providers;
 use Illuminate\Support\ServiceProvider;
 use Luinuxscl\LaravelApiKeyManager\Console\Commands\GenerateApiKeyCommand;
 use Luinuxscl\LaravelApiKeyManager\Console\Commands\ListApiKeysCommand;
+use Luinuxscl\LaravelApiKeyManager\Console\Commands\StoreApiKeyCommand;
 
 class APIKeyManagerServiceProvider extends ServiceProvider
 {
