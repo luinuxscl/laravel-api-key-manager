@@ -16,6 +16,13 @@ class APIKey extends Model
     ];
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'api_keys';
+
+    /**
      * Relación polimórfica: la API key puede pertenecer a distintos modelos.
      */
     public function keyable()
