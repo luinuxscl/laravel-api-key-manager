@@ -27,6 +27,7 @@ class APIKeyManagerServiceProvider extends ServiceProvider
             $this->commands([
                 GenerateApiKeyCommand::class,
                 ListApiKeysCommand::class,
+                StoreApiKeyCommand::class,
             ]);
         }
     }

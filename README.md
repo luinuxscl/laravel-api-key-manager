@@ -117,6 +117,9 @@ php artisan api-key:list
 
 # Listar API keys para un servicio específico
 php artisan api-key:list --service=google-maps
+
+# Almacenar una API key existente
+php artisan api-key:store "API Key de Producción" google-maps "<API_KEY>"
 ```
 
 ## Seguridad
