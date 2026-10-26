@@ -17,5 +17,6 @@
                 "Luinuxscl\\LaravelApiKeyManager\\Providers\\APIKeyManagerServiceProvider"
             ]
         }
-    }
+    },
+    "license": "MIT"
 }
